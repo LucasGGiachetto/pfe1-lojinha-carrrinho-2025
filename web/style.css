@@ -1,0 +1,109 @@
+:root {
+  --primary: #2a2a72;
+  --secondary: #ff9f1c;
+  --dark: #1a1a1a;
+  --light: #f8f9fa;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: white;
+  color: var(--dark);
+}
+
+/* Header */
+header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Página de Produto */
+.img-fluid {
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* Carrinho */
+.cart-item {
+  transition: background-color 0.2s;
+}
+.cart-item:hover {
+  background-color: var(--light);
+}
+
+/* Checkout */
+.checkout-page {
+  max-width: 800px;
+}
+.form-control, .form-select {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s;
+}
+.btn-dark {
+  background-color: var(--dark);
+  border-color: var(--dark);
+}
+.btn-dark:hover {
+  background-color: #333;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+  }
+}
+
+/* Mantenha o CSS anterior e adicione: */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #eee;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Checkout */
+.sticky-top {
+  top: 20px;
+}
+
+#checkoutForm input, 
+#checkoutForm select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#checkoutForm .form-check {
+  transition: all 0.3s;
+}
+
+#checkoutForm .form-check:hover {
+  border-color: var(--primary) !important;
+}
+
+.btn-checkout {
+  background: linear-gradient(135deg, #2a2a72, #3a3a8a);
+  border: none;
+  padding: 15px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .checkout-columns {
+    flex-direction: column-reverse;
+  }
+}

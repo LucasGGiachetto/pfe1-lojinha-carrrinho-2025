@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TemDiTudo - PlayStation 5</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="container my-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <img src="./assets/profileUserIcon-removebg-preview.png" alt="Perfil" width="40">
+        <span class="fw-bold">Kaleb Ferreira</span>
+      </div>
+      <h1 class="m-0 fs-4 fw-normal">TemDiTudo</h1>
+      <div>
+        <button class="btn btn-outline-dark position-relative">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+        </button>
+      </div>
+    </div>
+    <hr class="my-3">
+  </header>
+  <main class="container mb-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="./assets/ps5.jpg" class="img-fluid rounded-3" alt="PlayStation 5">
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3">PlayStation 5</h2>
+        <p class="text-muted">SONY</p>
+        <p class="mb-4">
+          O PlayStation 5 é o console da próxima geração da Sony, oferecendo
+          gráficos incríveis em 4K, carregamento super rápido graças ao SSD e
+          experiência imersiva com o controle DualSense (com feedback tátil e
+          gatilhos adaptativos). Com exclusivos imperdíveis como "Demon's Souls" e
+          "Ratchet & Clank", além de ser compatível com jogos de PS4, o PS5
+          proporciona uma experiência única e fluida.
+        </p>
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <span class="fs-4 fw-bold text-danger">R$4.999,90</span>
+          <span class="text-success"><i class="fas fa-check-circle"></i> Em estoque</span>
+        </div>
+        <button class="btn btn-dark btn-lg w-100">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Carrinho de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="cart-empty text-center py-5" style="display: none;">
+            <i class="fas fa-shopping-cart fa-4x text-muted mb-3"></i>
+            <p class="fs-5">Não tem nenhum item no seu carrinho '-'</p>
+          </div>
+          <div class="cart-items">
+            <div class="cart-item py-3 border-bottom">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h6>PlayStation 5</h6>
+                  <small class="text-muted">SONY</small>
+                </div>
+                <span class="fw-bold">R$4.999,90</span>
+              </div>
+            </div>
+            <!-- Outros itens do carrinho aqui -->
+          </div>
+          <div class="d-grid gap-2 mt-4">
+            <button class="btn btn-dark">Concluir Compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Página de Checkout -->
+  <div class="checkout-page container py-5" style="display: none;">
+    <h2 class="mb-4">Dados para entrega</h2>
+    <form>
+      <div class="row g-3 mb-4">
+        <div class="col-md-2">
+          <label class="form-label">CEP</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Número</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-md-8">
+          <label class="form-label">Complemento</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Endereço</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Cidade</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Estado</label>
+          <select class="form-select">
+            <option>SP</option>
+            <!-- Outros estados -->
+          </select>
+        </div>
+      </div>
+
+      <div class="border-top pt-4 mb-4">
+        <div class="d-flex justify-content-between mb-2">
+          <span>Total da compra</span>
+          <span>R$4.999,90</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span>Frete</span>
+          <span>Grátis</span>
+        </div>
+        <div class="d-flex justify-content-between fw-bold fs-5">
+          <span>Total final</span>
+          <span>R$4.999,90</span>
+        </div>
+      </div>
+
+      <h5 class="mb-3">Pagamento</h5>
+      <div class="mb-4">
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="payment" id="pix">
+          <label class="form-check-label" for="pix">PIX</label>
+        </div>
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="payment" id="credit">
+          <label class="form-check-label" for="credit">Cartão de crédito</label>
+        </div>
+        <div class="row g-3 mt-2" id="creditFields" style="display: none;">
+          <div class="col-md-8">
+            <label class="form-label">Número do cartão</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-md-2">
+            <label class="form-label">Validade</label>
+            <input type="text" class="form-control" placeholder="MM/AA">
+          </div>
+          <div class="col-md-2">
+            <label class="form-label">CVV</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex gap-3">
+        <button class="btn btn-outline-dark flex-grow-1">Cancelar</button>
+        <button class="btn btn-dark flex-grow-1">Pagar</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
